@@ -1,0 +1,47 @@
+# translation of ru.po to Russian
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Kozlov <kozlov.y@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: seyon NEW\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2008-07-06 21:25+0400\n"
+"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Устройство доступа к модему"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Укажите файл устройства соответствующий порту, к которому подключён модем. "
+"Например, это может быть /dev/ttyS1 или любой другой файл устройства."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"Файл /dev/modem обычно является символической ссылкой на подходящий файл "
+"устройства. Данная программа настройки не настраивает эту ссылку. Если вы "
+"укажите \"/dev/modem\", то эта ссылка уже должна существовать."

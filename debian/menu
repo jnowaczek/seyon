@@ -1,0 +1,4 @@
+?package(seyon):needs="X11" section="Applications/Network/Communication" \
+    hints="Terminal" \
+	title="Seyon" longtitle="Seyon communications program" \
+	command="/usr/bin/seyon"

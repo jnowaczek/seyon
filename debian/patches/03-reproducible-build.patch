@@ -1,0 +1,32 @@
+From: Santiago Vila <sanvila@debian.org>
+Subject: Do not define or use COMPILE_BY, COMPILE_HOST, COMPILE_DATE and COMPILE_TIME
+
+--- a/Seyon.c
++++ b/Seyon.c
+@@ -225,9 +225,8 @@
+ 
+     printf("\r\n%s %s\r\n", "Seyon Copyright (c) 1992-1993 Muhammad M. Saggaf.",
+ 	 "All rights reserved.");
+-    printf("\rVersion %s rev. %s %s-%s %s@%s %s %s.\r\n\n", VERSION, REVISION, 
+-	 COMPILE_HOSTTYPE, COMPILE_OSNAME, COMPILE_BY, COMPILE_HOST,
+-	 COMPILE_DATE, COMPILE_TIME);
++    printf("\rVersion %s rev. %s %s-%s.\r\n\n", VERSION, REVISION,
++	 COMPILE_HOSTTYPE, COMPILE_OSNAME);
+ 
+     if ((tfp = fopen("/dev/tty", "r+")) == NULL) {
+         PopupInitError("errTtyAccess", exit);
+--- a/makever.sh
++++ b/makever.sh
+@@ -38,12 +38,8 @@
+ #host=`hostname`; host=${host:-${`uname -n`:-"host"}}
+ #user=${USER:-${LOGNAME:-${`logname`:-"user"}}}
+ 
+-echo "#define COMPILE_BY \"$user\"" > version.h
+-echo "#define COMPILE_HOST \"$host\"" >> version.h
+ echo "#define COMPILE_OSNAME \"$system\"" >> version.h
+ echo "#define COMPILE_HOSTTYPE \"$machine\"" >> version.h
+-echo "#define COMPILE_DATE \"`date +%D`\"" >> version.h
+-echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
+ 
+ echo "#define VERSION \"$VERSION\"" >> version.h
+ echo "#define REVISION \"$REVISION\"" >> version.h

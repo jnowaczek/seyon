@@ -1,0 +1,93 @@
+#!/bin/sh
+set -e
+
+# Some ideas stolen from the cvs package
+
+# Config script for seyon using debconf
+. /usr/share/debconf/confmodule
+db_version 2.0 || [ $? -lt 30 ]
+
+db_title "Seyon communication software"
+
+# Defaults
+MODEMDEFAULTS=/etc/X11/seyon/Seyon-modem
+DEFAULTPORT=/dev/modem
+PORT=$DEFAULTPORT
+
+read_rcfile() {
+    # Default values
+    if [ -f $MODEMDEFAULTS ]; then
+       PORT=`cat $MODEMDEFAULTS | grep -m1 "^seyon\*modems:" | cut -f2 -d: 2>/dev/null`
+    fi
+    if [ -z $PORT ] ; then
+       PORT=$DEFAULTPORT
+    fi
+}
+
+write_rcfile() {
+    TEMPFILE=`tempfile`
+    if [ -f $MODEMDEFAULTS ]; then
+       ESCAPEDPORT=`echo $PORT | sed 's/\//\\\\\//g'`
+       sed "s/^seyon\*modems:.*$/seyon\*modems: ${ESCAPEDPORT}/" $MODEMDEFAULTS > $TEMPFILE
+       chmod --reference=$MODEMDEFAULTS $TEMPFILE
+       chown --reference=$MODEMDEFAULTS $TEMPFILE
+    else
+       echo "seyon*modems: $PORT" > $TEMPFILE
+       chmod 640 $TEMPFILE
+       chown root:dialout $TEMPFILE
+    fi
+    if [ ! -d /etc/X11/seyon ] ; then
+        mkdir -p /etc/X11/seyon
+    fi
+    mv $TEMPFILE $MODEMDEFAULTS
+}
+
+set_debconf() {
+    if [ "$PORT" ]; then
+        db_set seyon/device "$PORT" || true
+    fi
+}
+
+get_debconf() {
+    db_get seyon/device
+    PORT=$RET
+    # If not present, use default
+    if [ "$PORT" = "" ]
+    then
+       PORT=$DEFAULTPORT
+    fi
+}
+
+
+input_settings() {
+    db_input low seyon/device || true
+    db_go
+    db_get seyon/device
+    PORT=$RET
+    # If not present, use default
+    if [ "$PORT" = "" ]
+    then
+       PORT=$DEFAULTPORT
+    fi
+}
+
+
+## Main program
+# We first read the settings file
+# in order to get admin-modified settings
+read_rcfile
+# Debconf-stored values are updated accordingly
+set_debconf
+# They are re-read from Debconf
+get_debconf
+# In case the package has never been configured, the settings
+# are asked through debconf
+input_settings
+# They are re-re-read from debconf
+# for updating variables 
+get_debconf
+# The settings file is written
+write_rcfile
+# Then we do some other stuff, which could sometimes lead to
+# debconf showing screens
+# This is why they are here and not in the postinst script

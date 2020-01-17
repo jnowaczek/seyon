@@ -1,0 +1,52 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seyon\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2004-12-31 11:57+0100\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <provoz@debian.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Zařízení modemu"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Vyberte soubor zařízení, který odpovídá portu, ke kterému je modem připojen. "
+"Může to být /dev/ttyS1, nebo nějaký jiný soubor zařízení."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"/dev/modem často bývá symbolickým odkazem na příslušný soubor zařízení. "
+"Tento konfigurační program zmíněný odkaz nevytváří. Zadáte-li tedy \"/dev/"
+"modem\", měl by odkaz již existovat."

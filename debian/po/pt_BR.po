@@ -1,0 +1,46 @@
+# Debconf translations for seyon
+# Copyright (C) 2012 THE seyon'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the seyon package.
+# J.S.Júnior <dgjunior4@hotmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seyon 2.20c-31\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2012-02-24 17:12-0200\n"
+"Last-Translator: J.S.Júnior <dgjunior4@hotmail.com>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Dispositivo de modem"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Por favor, escolha o arquivo de dispositivo correspondente à porta na qual o "
+"modem está conectado. Este pode ser /dev/ttyS1 ou qualquer outro arquivo de "
+"dispositivo."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"/dev/modem é geralmente um link simbólico para o arquivo de dispositivo "
+"apropriado. Este programa de configuração não criará esse link. Se você "
+"escolher \"/dev/modem\", o link já deverá existir."

@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+	abort-upgrade|abort-remove|abort-deconfigure)
+	exit 0;; # Don't prompt for configuration if something went wrong...
+esac
+
+EMU=/etc/X11/seyon/seyon-emu
+COLORDEFAULTS=/etc/X11/seyon/Seyon
+MODEMDEFAULTS=/etc/X11/seyon/Seyon-modem
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+if [ ! -f $COLORDEFAULTS ] || [ ! -f $MODEMDEFAULTS  ]; then
+	# No longer need to worry about colour/mono app-defaults any more; the
+	# system will get it right...
+	ln -sf /usr/bin/x-terminal-emulator $EMU
+fi
+
+#DEBHELPER#

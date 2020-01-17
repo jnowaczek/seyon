@@ -1,0 +1,18 @@
+Source: seyon
+Section: comm
+Priority: extra
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9), libxmu-dev, libxt-dev, xutils-dev, libxaw7-dev, bison
+
+Package: seyon
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, xterm | x-terminal-emulator, debconf (>= 1.2.9) | debconf-2.0
+Suggests: lrzsz, ckermit
+Description: Full-featured native X11 communications program
+ Seyon is a complete full-featured modem communications package
+ for the X Window System. Some of its features are:
+  - dialing directory
+  - terminal emulation (DEC VT02, Tektronix 4014 and ANSI)
+  - script language
+  - Zmodem

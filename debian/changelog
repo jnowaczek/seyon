@@ -1,0 +1,427 @@
+seyon (2.20c-32) unstable; urgency=medium
+
+  * QA upload.
+  * Switch to minimal dh debian/rules.
+  * Switch to "3.0 (quilt)" source format.
+  * Drop obsolete prerm (/usr/doc to /usr/share/doc transition).
+  * debian/postinst: Do not worry about menus, debhelper already does.
+  * debian/postrm: Do not worry about menus, debhelper already does.
+  * Thanks to dh, debconf works again (it didn't for a long time).
+  * debian/postrm: Do not worry about debconf, debhelper already does.
+  * Add debian/po/pt_BR.po from J.S.Júnior. Closes: #663497.
+  * debian/po: Convert remaining files to UTF-8.
+  * Rename getline() to seyon_getline() to avoid conflict with system
+    provided getline(). This fixes a FTBFS bug when building with
+    glibc 2.21 and gcc 5. Reported by Daniel Schepler. Closes: #790281.
+  * Do not define or use COMPILE_BY, COMPILE_HOST, COMPILE_DATE
+    or COMPILE_TIME. This should make the build reproducible.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 26 Sep 2015 14:27:42 +0200
+
+seyon (2.20c-31) unstable; urgency=low
+
+  * QA upload
+  * Use Debian QA Group as maintainer. Closes: #589106
+  * Danish debconf translation update. Closes: #599433
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 11 Oct 2010 21:41:31 +0200
+
+seyon (2.20c-30) unstable; urgency=low
+
+  * Fix pending l10n issues. Thanks for prodding from Christian Perrier!
+    Debconf translations:
+  * Japanese (Hideki Yamane (Debian-JP)).  Closes: #512984, #554095
+  * Simplified Chinese (Ji ZhengYu).  Closes: #512984
+  * Fix stupid string overflow in str_stripspc_copy(). Closes: #542828.
+    Thanks to Frederic Danis for the patch.
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 17 Jan 2009 21:28:04 +0000
+
+seyon (2.20c-29) unstable; urgency=low
+
+  * Fix pending l10n issues. Debconf translations:
+    - Basque. Closes: #490118 (thanks to xabier bilbao)
+    - Italian. Closes: #502472 (thanks to vince)
+  * Many thanks again to Christian Perrier for his i18n efforts,
+    co-ordinating the above.
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 18 Oct 2008 01:33:32 +0100
+
+seyon (2.20c-28) unstable; urgency=low
+
+  * Fix pending debconf l10n issues, thanks to Christian Perrier for
+    co-ordinating: 
+    - Spanish. Closes: #459264 (Rudy Godoy Guillén)
+    - Norwegian Bokmål. Closes: #459264 (Bjørn Steensrud)
+    - Finnish. Closes: #489128 (Esko Arajärvi)
+    - Turkish. Closes: #489163 (Mert Dirik)
+    - Galician. Closes: #489176 (Jacobo Tarrio)
+    - Russian. Closes: #489531 (Yuri Kozlov)
+  * Update Standards-Version
+  * Move the menu entry from Apps/Net to
+    Applications/Network/Communication
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 09 Jul 2008 23:07:35 +0100
+
+seyon (2.20c-27) unstable; urgency=low
+
+  * Silly bug#2 from the repackaging: re-add /etc/X11/seyon. 
+    Closes: #440788
+
+ -- Steve McIntyre <93sam@debian.org>  Tue, 04 Sep 2007 09:23:37 +0100
+
+seyon (2.20c-26) unstable; urgency=low
+
+  * Silly bug#1 from the repackaging: cope with a completely clean
+    build. Closes: #440667
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 03 Sep 2007 23:51:50 +0100
+
+seyon (2.20c-25) unstable; urgency=low
+
+  * Repackaged using debhelper, well overdue.
+  * Cope with DEB_BUILD_OPTIONS. Closes: #438017.
+  * Multiple lintian warning fixes.
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 02 Sep 2007 00:15:24 +0100
+
+seyon (2.20c-24) unstable; urgency=low
+
+  * Don't fail to purge if debconf is no available in the postrm.
+    Closes: #417323
+
+ -- Steve McIntyre <93sam@debian.org>  Wed,  9 May 2007 22:36:54 +0100
+
+seyon (2.20c-23) unstable; urgency=medium
+
+  * Added German debconf template. Thanks to Helge Kreutzmann for the
+    patch. Closes: #413395
+  * Removed preinst file; it does nothing any more.
+  * Rename man pages from <foo>.1x to <foo>.1.
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 12 Mar 2007 00:58:54 +0100
+
+seyon (2.20c-22) unstable; urgency=low
+
+  * Fix bashisms in the debian build (config.include). Closes: #380108
+  * Added Portuguese debconf template. Thanks to Luisa Lourenco and Rui
+    Branco for the patch. Closes: #381712
+  * Updated Standards-Version.
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 13 Aug 2006 20:38:54 +1000
+
+seyon (2.20c-21) unstable; urgency=high
+
+  * Thanks to Steve Langasek for the NMU; using his patch. Closes: #366382
+  * Strip /usr/bin/seyon, not /usr/share/bin/seyon.
+  * Removed the Pre-Depend on x11-common; moved the help file from
+    /usr/lib/X11 to /usr/share/seyon
+
+ -- Steve McIntyre <93sam@debian.org>  Mon,  8 May 2006 09:00:40 +1000
+
+seyon (2.20c-20.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * High-urgency upload for RC bugfix.
+  * Update debian/ to use FHS paths instead of /usr/X11R6 for Xorg7, and
+    build-depend on xutils-dev to get a compatible version of xmkmf.
+  * Pre-Depend on x11-common (>= 1:7.0.0) to also ensure /usr/lib/X11 is
+    a directory when we unpack to it.
+
+ -- Steve Langasek <vorlon@debian.org>  Fri, 28 Apr 2006 13:17:55 -0700
+
+seyon (2.20c-20) unstable; urgency=high
+
+  * Remove now-redundant xlibs-dev build-dep - serious bug. Closes: #346920
+	
+ -- Steve McIntyre <93sam@debian.org>  Mon,  9 Jan 2006 08:40:22 +0000
+
+seyon (2.20c-19) unstable; urgency=low
+
+  * Added Swedish debconf template. Thanks to Daniel Nylander for the
+    patch. Closes: #331588
+	
+ -- Steve McIntyre <93sam@debian.org>  Sun, 13 Nov 2005 00:50:22 +0000
+
+seyon (2.20c-18) unstable; urgency=low
+
+  * Fixed debconf dependency to allow debconf-2.0 too.
+	
+ -- Steve McIntyre <93sam@debian.org>  Thu, 01 Sep 2005 00:39:22 +0100
+
+seyon (2.20c-17) unstable; urgency=low
+
+  * Added Vietnamese debconf template. Thanks to Clytie Siddall for the
+    patch. Closes: #318259.
+  * Updated build-deps for new X.org packages
+  * Updated Standards-version and fixed some lintian warnings.
+	
+ -- Steve McIntyre <93sam@debian.org>  Mon, 15 Aug 2005 22:16:22 +0100
+
+seyon (2.20c-16) unstable; urgency=low
+
+  * Added Czech debconf template. Thanks to Miroslav Kure for the
+    patch. Closes: #288019.
+	
+ -- Steve McIntyre <93sam@debian.org>  Mon, 03 Jan 2005 21:49:33 +0000
+
+seyon (2.20c-15) unstable; urgency=low
+
+  * Fix handling of /etc/X11/seyon/Seyon-modem on new
+    installations. Closes: #275167. Thanks to Rob Epping for the patch.
+  * Updated Standards-version and fixed some lintian warnings.
+	
+ -- Steve McIntyre <93sam@debian.org>  Mon, 25 Oct 2004 22:58:45 +0100
+
+seyon (2.20c-14) unstable; urgency=low
+
+  * Updated French debconf template. Thanks to Christian
+    Perrier. Closes: #216159.
+  * Added Dutch debconf template. Thanks to Tim Vandermeersch. Closes:
+    #209081.
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 02 Nov 2003 16:10:08 +0000
+
+seyon (2.20c-13) unstable; urgency=low
+
+  * Fixed typo in debian/templates. Closes: #209080
+  * Update to use new serial speed interface for Linux. Closes: #206321.
+    Thanks to Elrik Fuller for the patch.
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 13 Oct 2003 02:00:51 +0100
+
+seyon (2.20c-12) unstable; urgency=low
+
+  * Patch by Christian Perrier <bubulle@debian.org> :
+    - rename debian/config to debian/config.include (avoid confusion
+      with the config file needed by debconf)
+    - Now uses debconf :
+        - Depends on debconf (>= 1.2.9 for gettext)
+        - new config script (should properly handle admin-modified settings
+          -->debconf is not a registry)
+        - rewrote postint
+        - new templates file (gettext-based)
+      This should make the installation uninteractive. Closes: #147269
+      This should also remember the serial port on upgrade; Closes: #92414
+    - Any value may be entered for the modem device. Closes: #87564
+  * Make sure that the new Seyon-modem config file has the same
+    permissions as the old one.
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 21 Jul 2003 20:31:27 +0100
+
+seyon (2.20c-11) unstable; urgency=high
+
+  * Real fix for the string-handling bug in FmtString(). Many thanks
+    to Barry Kitson for a _huge_ amount of work on this one.
+  * Several other less major string cleanups, again thanks to Barry.
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 16 Jul 2003 01:39:22 +0100
+
+seyon (2.20c-10) unstable; urgency=low
+
+  * Fix for a nasty string-handling bug. Thanks to Barry Kitson for
+    the inspiration. Closes: #90613, #132484.
+  * Make sure we delete the generated Seyon.ad.h file on a "make clean".
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 14 Jul 2003 02:49:49 +0100
+
+seyon (2.20c-9) unstable; urgency=low
+
+  * Fix multi-line strings so will build again with gcc 3.3. Closes: #196280
+    Thanks to Joshua Kwan for the patch.
+  * Finally get around to replacing the NMU version. Closes: #133890
+    Thanks Junichi...
+  * Fixed some lintian warnings
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 07 Jun 2003 19:08:02 +0100
+
+seyon (2.20c-8.1) unstable; urgency=low
+
+  * NMU
+  * Do not write to $(HOME) when building. (closes: #133890)
+  * Fix build-deps to depend on libxaw7-dev | libxaw-dev instead of 
+  libxaw-dev only.
+
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 17 May 2002 21:12:50 +0900
+
+seyon (2.20c-8) unstable; urgency=medium
+
+  * Added Build-Depends on bison. Closes: #123699.
+  * Turned app-defaults files into conffiles after lintian warning.
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 19 Dec 2001 17:24:13 +0000
+
+seyon (2.20c-7) unstable; urgency=low
+
+  * Added Build-Depends on libxaw-dev. Closes: #89742.
+
+ -- Steve McIntyre <93sam@debian.org>  Thu, 15 Mar 2001 15:55:19 +0000
+
+seyon (2.20c-6) unstable; urgency=low
+
+  * Properly added menu entry. Sorry! Closes: #80160.
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 14 Mar 2001 00:03:32 +0000
+
+seyon (2.20c-5) unstable; urgency=low
+
+  * Added xutils to Build-Depends. Closes: #89134.
+  * Changed dependency on x-terminal-emulator to xterm | x-terminal-emulator to fix lintian warning.
+  * Added menu hint. Closes: #80160.
+  * I still think there's no better place in the menu structure than Apps/Net. Closes: #15080.
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 10 Mar 2001 11:12:39 +0000
+
+seyon (2.20c-4) unstable; urgency=low
+
+  * New maintainer address.
+  * Renamed Build-Depends-Indep to Build-Depends.
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 07 Mar 2001 22:53:31 +0000
+
+seyon (2.20c-3) unstable; urgency=medium
+
+  * Removed a broken usleep() declaration from SeDecl.h. Closes: #87532
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sun, 25 Feb 2001 11:31:56 +0000
+
+seyon (2.20c-2) unstable; urgency=medium
+
+  * Move app-defaults file to /etc/X11/app-defaults. Closes: #86289
+  * Now explicitly depends on x-terminal-emulator instead of imlicitly on xterm. Closes: #75343
+  * Fixed includes from SePort.c, so it now builds again. Closes: 84487
+  * Updated Standards-Version, added Build-Depends.
+  * Fixed lots of lintian warnings.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sat, 24 Feb 2001 11:01:56 +0000
+
+seyon (2.20c-1) unstable; urgency=low
+
+  * Call makever.sh with sh, so it doesn't need to be executable. Fixes Bug#38037
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sun, 23 May 1999 20:19:56 +0100
+
+seyon (2.20c-0) unstable; urgency=low
+
+  * Hurrah! Seyon is now free! Check the copyright file for more info. 
+    Fixes Bug#20914.
+  * New upstream version, new upstream maintainer (me!)
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sun, 09 May 1999 21:18:01 +0100
+
+seyon (2.14c-12) frozen unstable; urgency=low
+
+  * Removed obsolete dependency on xbase. Would be important bug if we weren'y non-free...
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sat, 06 Feb 1999 13:32:15 +0000
+
+seyon (2.14c-11) frozen unstable; urgency=low
+
+  * Replaced Suggests: for now non-existent kermit package with ckermit.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Thu, 14 Jan 1999 23:54:15 +0000
+
+seyon (2.14c-10) frozen unstable; urgency=low
+
+  * Integrated non-maintainer diff (9.1)
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Wed, 30 Dec 1998 01:48:53 +0000
+
+seyon (2.14c-9.1) frozen unstable; urgency=low
+
+  * non-maintainer (binary-only) upload for Alpha
+  * ignore error from $(ch_commands) as chmodding the Seyon symlink fails if
+    seyon isn't installed yet (and hence no /etc/X11/seyon/Seyon file).
+
+ -- Paul Slootman <paul@debian.org>  Tue, 29 Dec 1998 20:11:10 +0100
+
+seyon (2.14c-9) frozen unstable; urgency=low
+
+  * Fixed typo in mono app-default file; s/replcae/replace; thanks to Remo Badii <Remo.Badii@psi.ch> for pointing this one out.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sun, 24 Oct 1998 20:15:08 +0100
+
+seyon (2.14c-8) unstable; urgency=low
+
+  * Fixed script-handling code so it no longer seg-faults after running a "shell" command. Fixes Bug#27015.
+  * Include examples for phonelist, protocols and startup. Fixes Bug#23268.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sat, 17 Oct 1998 22:03:16 +0100
+
+seyon (2.14c-7) frozen unstable; urgency=low
+
+  * Added missing sunsite reference to copyright file. Fixes bug #19870
+  * Added error-checking to postinst - don't ask questions if something went wrong. Fizes bug #12608.
+  * Restores X beep after use; fixes bug #17231.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Thu, 26 Mar 1998 22:54:54 -0000
+
+seyon (2.14c-6) unstable; urgency=low
+
+  * New maintainer
+  * Added simple man page for seyon-emu.
+  * Other packaging fixes to close bug #19402.
+  * Uses correct devices (fixes bug #15061)
+  * Postinst fixed (fixes bug #16226)
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Sat, 14 Mar 1998 20:31:43 -0000
+
+seyon (2.14c-5.3) unstable; urgency=low
+
+  * Fixed postint to not fail if enter is pressed in response to the first
+    question with no 'y' or 'n'.
+  * Postinst and postrm do not use bashisms, changes them to use /bin/sh.
+
+ -- Joey Hess <joeyh@master.debian.org>  Sun, 16 Nov 1997 00:42:06 -0500
+
+seyon (2.14c-5.2) unstable; urgency=low
+
+  * Libc6 release.
+
+ -- Joey Hess <joeyh@master.debian.org>  Sun, 16 Nov 1997 00:42:06 -0500
+
+seyon (2.14c-5.1) unstable; urgency=low
+
+  * Changed maintainer to Debian QA Group; seyon is orphaned.
+  * Updated to use new source format (#9561).
+  * Use pristine sources.
+  * Register with menu system.
+  * Depend on xbase for xterm.
+  * Use ttyS instead of cua (#4922).
+  * If upgrading, and we used cua before, update the conffiles to use ttyS
+    instead.
+  * Include phonelist in the examples directory (#6475).
+
+ -- Joey Hess <joeyh@master.debian.org>  Mon,  1 Sep 1997 13:13:24 -0400
+
+Wed Jul 24 23:18:23 1996  Sven Rudolph  <sr1@inf.tu-dresden.de>
+
+	* debian.control: added exetended description (Bug#3689)
+
+	* debian.rules: corrected multiarchitecture support
+
+	* debian.control: added Section: and Priority:
+
+Thu Apr  4 19:38:36 1996  Sven Rudolph  <sr1@inf.tu-dresden.de>
+
+	* releasing 2.14c-3
+
+	* rebuilt for ELF
+
+	* debian.postinst: fixed creytion of seyon-emu symlink
+	
+	* debian.control: removed Package_Revision field
+			   added Architecture field
+
+Thu Sep 21 23:23:52 1995  Sven Rudolph  <sr1@inf.tu-dresden.de>
+
+	* moved config data to /etc/X11/seyon
+
+	* debian.postinst: postinst doesn't modify
+	                   /etc/X11/xinit/Xresources and
+			   /etc/X11/xdm/Xresources now
+
+	* debian.control: fixed entries for DEPENDS and OPTIONAL
+	                  (Bug#1409, Bug#1177)
+	
+	* debian.control: corrected location of manpage (Bug#490)

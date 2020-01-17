@@ -1,0 +1,22 @@
+.TH SEYON 1 \" -*- nroff -*-
+
+.SH NAME
+Seyon \- X11 Telecommunications Package.
+
+.SH SYNOPSIS
+.B seyon-emu
+
+.SH DESCRIPTION
+
+.P 
+
+\fISeyon-emu\fP is the name of the terminal-emulator program called by
+\fIseyon\fP. This will normally simply be a symbolic link to another
+program (such as \fIxterm\fP or \fIrxvt\fP). Therefore read the manual
+page of the appropriate program for its options.
+
+.SH SEE ALSO
+rxvt(1), xterm(1), seyon(1)
+
+This manual page added by Steve McIntyre <stevem@chiark.greenend.org.uk>,
+Debian maintainer of seyon, 14th March 1998. 

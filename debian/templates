@@ -1,0 +1,10 @@
+Template: seyon/device
+Type: string
+Default: /dev/modem
+_Description: Modem device
+ Please choose the device file corresponding to the port the modem is
+ connected to. This may be /dev/ttyS1 or any other device file.
+ .
+ /dev/modem is usually a symbolic link to the appropriate device file.
+ This configuration program will not setup this link. If you choose
+ "/dev/modem", the link should already exist.

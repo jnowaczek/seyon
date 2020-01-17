@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: seyon\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2008-07-03 09:57-0000\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Modeemilaite:"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Valitse laitetiedosto, joka vastaa porttia, johon modeemi on kytketty. Tämä "
+"voi olla /dev/ttyS1 tai mikä tahansa muu laitetiedosto."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"/dev/modem on yleensä symbolinen linkki asianmukaiseen laitetiedostoon. Tämä "
+"asetusohjelma ei luo kyseistä linkkiä. Jos valitset laitteen ”/dev/modem”, "
+"sen tulisi olla jo olemassa."

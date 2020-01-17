@@ -1,0 +1,55 @@
+From: Santiago Vila <sanvila@debian.org>
+Subject: Rename getline() to seyon_getline() to avoid conflict with system provided getline()
+Bug-Debian: https://bugs.debian.org/790281
+
+--- a/SeDecl.h
++++ b/SeDecl.h
+@@ -123,7 +123,7 @@
+                 PortToTty(),
+                 do_exit(),
+                 get_line(),
+-                getline(),
++                seyon_getline(),
+                 lc_word(),
+                 toggle_flag(),
+                 cpmode(),
+--- a/SeScript.c
++++ b/SeScript.c
+@@ -147,7 +147,7 @@
+ {
+   int             i;
+ 
+-  getline(script_fp);
++  seyon_getline(script_fp);
+ 
+   if (eof_flag)
+     return;
+@@ -337,7 +337,7 @@
+ 
+   rewind(script_fp);
+   while (!found) {
+-    getline(script_fp);
++    seyon_getline(script_fp);
+     if (eof_flag)
+       break;
+ 
+--- a/SeSupp.c
++++ b/SeSupp.c
+@@ -27,7 +27,7 @@
+ char            word[WBSIZE];	/* Parsed word */
+ char           *wptr,
+                *lptr;		/* Word and line pointers */
+-int             eof_flag = 0;	/* Indicates EOF during getline() processing */
++int             eof_flag = 0;	/* Indicates EOF during seyon_getline() processing */
+ 
+ void
+ sendstr(p)			/* send a string to the port */
+@@ -198,7 +198,7 @@
+  */
+ 
+ void
+-getline(fp)
++seyon_getline(fp)
+      FILE           *fp;
+ {
+   int             l;

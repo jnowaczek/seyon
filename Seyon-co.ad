@@ -1,0 +1,42 @@
+
+! *
+! * This file is part of the Seyon, Copyright (c) 1992-1993 by Muhammad M.
+! * Saggaf. All rights reserved.
+! * 
+! * See the file COPYING (1-COPYING) or the manual page seyon(1) for a full
+! * statement of rights and permissions for this program.
+! * 
+
+#include "Seyon"
+
+*background: #286464
+*foreground: black
+*borderColor: white
+
+*background: blue
+*foreground: black
+*borderColor: lightBlue
+
+*Command.background: lightBlue
+*Scrollbar.background: cyan
+*Toggle.background: cyan
+*Toggle.foreground: black
+*List.background: tan
+*XfwfMultiList.background: tan
+*Text*background: tan
+*Text*Scrollbar.background: cyan
+
+*ok.background: green
+*cancel.background: red
+*dismiss.background: orange
+*hangup.background: red
+*exit.background: red
+*kill.background: red
+
+*about*msg.background: tan
+*about*pic.background: tan
+
+*messageBox.message.background: tan
+
+*quickKeyBox.Command.background: orange
+*quickKeyBox.Command.foreground: black

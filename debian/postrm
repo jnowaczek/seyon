@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+XTERM=/etc/X11/seyon/seyon-emu
+COLORDEFAULTS=/etc/X11/seyon/Seyon
+MODEMDEFAULTS=/etc/X11/seyon/Seyon-modem
+
+if [ "$1" = "purge" ]; then
+	rm -f $XTERM $COLORDEFAULTS $MODEMDEFAULTS
+	rmdir /etc/X11/seyon /etc/X11 2>/dev/null || true
+fi
+
+#DEBHELPER#

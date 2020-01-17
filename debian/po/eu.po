@@ -1,0 +1,47 @@
+# translation of seyon debconf template to Euskara
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Piarres Beobide <pi@beobide.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: seyon-eu\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2008-07-07 23:13+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Modem gailua"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Aukera ezazu modema konektaturik dagoen atakari dagokion gailu- "
+"fitxategia. /dev/ttyS1 izan daiteke edo beste edozein gailu-fitxategi."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"/dev/modem normalean dagokion gailu-fitxategira daraman esteka bat da. "
+"Konfigurazio programa honek ez du esteka hori sortuko. \"/dev/modem\" "
+"hautatzen baduzu, estekak sortua egon behar du aurretik."
+

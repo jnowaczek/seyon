@@ -1,0 +1,24 @@
+diff -uprN seyon-2.20c/SeSubsX.c seyon-2.20c_patched/SeSubsX.c
+--- seyon-2.20c/SeSubsX.c	2010-08-20 15:43:52.000000000 +0800
++++ seyon-2.20c_patched/SeSubsX.c	2010-08-20 15:37:04.000000000 +0800
+@@ -232,7 +232,7 @@ read_seyon_file(name, line)
+ {
+   FILE           *fp;
+ 
+-  if ((fp = open_file(name, qres.defaultDirectory)) == NULL)
++  if ((fp = open_file(name, 0, qres.defaultDirectory)) == NULL)
+     return False;
+ 
+   ReadCommentedFile(fp, line);
+diff -uprN seyon-2.20c/SeTrans.c seyon-2.20c_patched/SeTrans.c
+--- seyon-2.20c/SeTrans.c	2010-08-20 15:43:52.000000000 +0800
++++ seyon-2.20c_patched/SeTrans.c	2010-08-20 15:37:24.000000000 +0800
+@@ -187,7 +187,7 @@ ReadParseProtFile(fname, disItems)
+   int             i,
+                   n;
+ 
+-  if ((fp = open_file(fname, qres.defaultDirectory)) == NULL)
++  if ((fp = open_file(fname, REG_BUF, qres.defaultDirectory)) == NULL)
+     return -1;
+ 
+   ReadCommentedFile(fp, rawItems);

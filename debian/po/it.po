@@ -1,0 +1,48 @@
+# ITALIAN TRANSLATION OF SEYON'S PO-DEBCONF FILE
+# Copyright (C) 2008 THE SEYON'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the seyon package.
+#
+# Vincenzo Campanella <vinz65@gmail.com>, 2008.
+#
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: seyon@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-30 17:59+0200\n"
+"PO-Revision-Date: 2008-10-09 23:51+0200\n"
+"Last-Translator: Vincenzo Campanella <vinz65@gmail.com>\n"
+"Language-Team: italiano <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Modem device"
+msgstr "Device modem"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Please choose the device file corresponding to the port the modem is "
+"connected to. This may be /dev/ttyS1 or any other device file."
+msgstr ""
+"Scegliere il device corrispondente alla porta alla quale il modem è "
+"connesso. Questo può essere /dev/ttyS1 o qualsiasi altro device."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"/dev/modem is usually a symbolic link to the appropriate device file. This "
+"configuration program will not setup this link. If you choose \"/dev/modem"
+"\", the link should already exist."
+msgstr ""
+"/dev/modem è solitamente un collegamento simbolico al device appropriato. "
+"Questo programma di configurazione non creerà questo collegamento. Se si "
+"sceglie \"/dev/modem\", il collegamento deve già esistere."
+

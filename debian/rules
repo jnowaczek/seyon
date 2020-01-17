@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	xmkmf
+	dh_auto_build -- LOCAL_LDFLAGS="$(LDFLAGS)" CDEBUGFLAGS="" \
+		CCOPTIONS="$(CFLAGS) $(CPPFLAGS) -fno-strict-aliasing -Wall"
+
+override_dh_installchangelogs:
+	dh_installchangelogs 1-CHANGES
